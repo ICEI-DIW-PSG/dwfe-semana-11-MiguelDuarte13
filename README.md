@@ -6,33 +6,39 @@ Imagine que a página principal (home-page) mostre um visão dos vários itens q
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Decreva brevemente seu projeto
+- Nome: Miguel Duarte Lopes 
+- Matricula: 909425
+- Decreva brevemente seu projeto: 
+
+O projeto consiste em um catálogo de animes desenvolvido com HTML, CSS e JavaScript. A página inicial apresenta uma lista de animes gerada dinamicamente a partir de uma estrutura JSON. Ao clicar em um anime, o usuário é direcionado para uma página de detalhes que exibe informações completas utilizando o ID recebido pela query string da URL.
 
 ## Prints do trabalho
 
-<<  COLOQUE A IMAGEM - HOME-PAGE - AQUI >>
+![HOME-PAGE](public/image/Home%20page.png)
 
-<<  COLOQUE A IMAGEM - TELA DE DETALHES - AQUI >>
+![TELA DE DETALHES](public/image/TELA%20DE%20DETALHES.png)
 
 ## Dados em JSON
 Inclua aqui a estrutura de dados definida por você para o projeto com pelo menos dois exemplo de dados.
 
 ```json
 {
-  "animes": [
+  "produtos": [
     {
       "id": 1,
-      "nome": "Naruto",
-      "genero": "Ação",
-      "destaque": true
+      "nome": "iPhone 15",
+      "preco": 6999.90,
+      "categoria": "Celulares",
+      "descricao": "Smartphone Apple com câmera avançada.",
+      "emEstoque": true
     },
     {
       "id": 2,
-      "nome": "Fullmetal Alchemist",
-      "genero": "Aventura",
-      "destaque": false
+      "nome": "Galaxy S24",
+      "preco": 5499.90,
+      "categoria": "Celulares",
+      "descricao": "Celular Samsung de última geração.",
+      "emEstoque": true
     }
   ]
 }
