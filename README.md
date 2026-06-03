@@ -21,27 +21,24 @@ O projeto consiste em um catálogo de animes desenvolvido com HTML, CSS e JavaSc
 ## Dados em JSON
 Inclua aqui a estrutura de dados definida por você para o projeto com pelo menos dois exemplo de dados.
 
-```json
-{
-  "produtos": [
-    {
-      "id": 1,
-      "nome": "iPhone 15",
-      "preco": 6999.90,
-      "categoria": "Celulares",
-      "descricao": "Smartphone Apple com câmera avançada.",
-      "emEstoque": true
-    },
-    {
-      "id": 2,
-      "nome": "Galaxy S24",
-      "preco": 5499.90,
-      "categoria": "Celulares",
-      "descricao": "Celular Samsung de última geração.",
-      "emEstoque": true
-    }
-  ]
-}
-```
+```js
+const produtos = [
+  {
+    id: 1,
+    nome: "iPhone 15",
+    preco: 6999.90,
+    categoria: "Celulares",
+    descricao: "Smartphone Apple com câmera avançada.",
+    emEstoque: true
+  },
+  {
+    id: 2,
+    nome: "Galaxy S24",
+    preco: 5499.90,
+    categoria: "Celulares",
+    descricao: "Celular Samsung de última geração.",
+    emEstoque: true
+  }
+];
 
 

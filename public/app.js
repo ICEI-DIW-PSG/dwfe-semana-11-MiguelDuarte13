@@ -1,43 +1,41 @@
-const data = {
-    produtos: [
-        {
-            id: 1,
-            nome: "iPhone 15",
-            preco: 6999.90,
-            categoria: "Celulares",
-            imagem: "https://picsum.photos/300/200?1",
-            descricao: "Smartphone Apple com câmera avançada.",
-            emEstoque: true
-        },
-        {
-            id: 2,
-            nome: "Galaxy S24",
-            preco: 5499.90,
-            categoria: "Celulares",
-            imagem: "https://picsum.photos/300/200?2",
-            descricao: "Celular Samsung de última geração.",
-            emEstoque: true
-        },
-        {
-            id: 3,
-            nome: "Notebook Dell",
-            preco: 4200.00,
-            categoria: "Notebooks",
-            imagem: "https://picsum.photos/300/200?3",
-            descricao: "Notebook ideal para estudos e trabalho.",
-            emEstoque: false
-        },
-        {
-            id: 4,
-            nome: "MacBook Air",
-            preco: 8999.90,
-            categoria: "Notebooks",
-            imagem: "https://picsum.photos/300/200?4",
-            descricao: "Notebook Apple leve e poderoso.",
-            emEstoque: true
-        }
-    ]
-};
+const produtos = [
+    {
+        id: 1,
+        nome: "iPhone 15",
+        preco: 6999.90,
+        categoria: "Celulares",
+        imagem: "https://picsum.photos/300/200?1",
+        descricao: "Smartphone Apple com câmera avançada.",
+        emEstoque: true
+    },
+    {
+        id: 2,
+        nome: "Galaxy S24",
+        preco: 5499.90,
+        categoria: "Celulares",
+        imagem: "https://picsum.photos/300/200?2",
+        descricao: "Celular Samsung de última geração.",
+        emEstoque: true
+    },
+    {
+        id: 3,
+        nome: "Notebook Dell",
+        preco: 4200.00,
+        categoria: "Notebooks",
+        imagem: "https://picsum.photos/300/200?3",
+        descricao: "Notebook ideal para estudos e trabalho.",
+        emEstoque: false
+    },
+    {
+        id: 4,
+        nome: "MacBook Air",
+        preco: 8999.90,
+        categoria: "Notebooks",
+        imagem: "https://picsum.photos/300/200?4",
+        descricao: "Notebook Apple leve e poderoso.",
+        emEstoque: true
+    }
+];
 
 const productList = document.getElementById("product-list");
 const searchInput = document.getElementById("search");
@@ -76,13 +74,13 @@ function createProductCard(produto) {
     return card;
 }
 
-function renderProducts(produtos) {
+function renderProducts(lista) {
 
     if (!productList) return;
 
     productList.innerHTML = "";
 
-    produtos.forEach(produto => {
+    lista.forEach(produto => {
 
         productList.appendChild(
             createProductCard(produto)
@@ -98,7 +96,7 @@ function renderCategories() {
     const categorias = [
         "Todas",
         ...new Set(
-            data.produtos.map(
+            produtos.map(
                 produto => produto.categoria
             )
         )
@@ -124,12 +122,12 @@ function filterProducts() {
 
     const categoria = categorySelect.value;
 
-    return data.produtos.filter(produto => {
+    return produtos.filter(produto => {
 
         const nomeValido =
             produto.nome
-            .toLowerCase()
-            .includes(texto);
+                .toLowerCase()
+                .includes(texto);
 
         const categoriaValida =
             categoria === "Todas" ||
@@ -173,7 +171,7 @@ if (btnRender) {
 }
 
 renderCategories();
-renderProducts(data.produtos);
+renderProducts(produtos);
 
 const productDetails =
     document.getElementById("product-details");
@@ -191,7 +189,7 @@ if (productDetails) {
         );
 
     const produto =
-        data.produtos.find(
+        produtos.find(
             p => p.id === id
         );
 
@@ -225,7 +223,17 @@ if (productDetails) {
                 ${produto.descricao}
             </p>
 
-            <a href="index.html">
+            <a class="btn-details" href="index.html">
+                Voltar para Home
+            </a>
+        `;
+
+    } else {
+
+        productDetails.innerHTML = `
+            <h2>Produto não encontrado</h2>
+
+            <a class="btn-details" href="index.html">
                 Voltar para Home
             </a>
         `;
